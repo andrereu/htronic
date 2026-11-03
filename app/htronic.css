@@ -109,6 +109,31 @@ html{scroll-behavior:smooth}
 .ht-reply{border-left:3px solid var(--y);padding-left:10px;font-size:12px!important;color:#666!important}
 .ht-reply b{color:#222}
 
+/* brands + warranty */
+.ht-brands{background:var(--ink);color:#fff;padding:26px 24px}
+.ht-brands-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr;gap:26px;align-items:center}
+.ht-brands-text p{font-size:14px;color:#cfd3d6;margin-top:12px;max-width:600px;line-height:1.55}
+.ht-brand-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.ht-brand-list li{background:var(--card);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:.02em}
+.ht-brand-list .more{border-color:var(--y);color:var(--y);background:transparent}
+.ht-warranty{background:var(--card);border-radius:14px;padding:18px 20px}
+.ht-warranty h3{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:800;margin:0}
+.ht-warranty h3 svg{color:var(--y);font-size:20px}
+.ht-warranty ul{display:grid;gap:12px;margin-top:14px}
+.ht-warranty li{display:flex;align-items:baseline;gap:12px;font-size:13px;color:#cfd3d6}
+.ht-warranty strong{font-size:26px;font-weight:800;line-height:1;color:var(--y);min-width:104px;white-space:nowrap}
+
+/* faq */
+.ht-faq{background:var(--paper);padding:26px 24px}
+.ht-faq-in{max-width:860px;margin:0 auto}
+.ht-faq details{background:#fff;border-radius:10px;margin-top:8px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.ht-faq details:first-of-type{margin-top:16px}
+.ht-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 18px;font-size:14px;font-weight:700}
+.ht-faq summary::-webkit-details-marker{display:none}
+.ht-faq summary::after{content:"+";color:var(--y-d);font-size:22px;line-height:1;flex:none}
+.ht-faq details[open] summary::after{content:"\2013"}
+.ht-faq details p{padding:0 18px 16px;font-size:13.5px;color:#444;line-height:1.55}
+
 /* area */
 .ht-area{background:var(--dark);color:#fff;padding:20px 24px}
 .ht-area-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.05fr .6fr .95fr;gap:22px;align-items:center}
@@ -134,7 +159,7 @@ html{scroll-behavior:smooth}
   .ht-services-in{grid-template-columns:repeat(3,1fr)}
   .ht-problems-in{grid-template-columns:1fr 1fr}
   .ht-problems-text{grid-column:1/-1}
-  .ht-segments-in,.ht-reviews-in{grid-template-columns:1fr}
+  .ht-segments-in,.ht-reviews-in,.ht-brands-in{grid-template-columns:1fr}
   .ht-segments-text p{max-width:none}
   .ht-area-in{grid-template-columns:1fr 1fr}
 }
@@ -147,7 +172,7 @@ html{scroll-behavior:smooth}
   .ht-hero-img{right:0;opacity:.4}
   .ht-cta-row .ht-btn{width:100%}
   .ht-btn{white-space:normal}
-  .ht-services,.ht-problems,.ht-segments,.ht-reviews,.ht-area{padding-left:16px;padding-right:16px}
+  .ht-services,.ht-problems,.ht-segments,.ht-reviews,.ht-area,.ht-brands,.ht-faq{padding-left:16px;padding-right:16px}
   .ht-services-in{grid-template-columns:repeat(2,1fr)}
   .ht-services-in li:last-child{grid-column:1/-1}
   .ht-problems-in,.ht-seg-grid,.ht-review-list,.ht-area-in{grid-template-columns:1fr}

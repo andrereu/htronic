@@ -9,9 +9,9 @@ import { SITE_URL } from "./site";
 import Analytics from "./analytics";
 import { localBusinessJsonLd } from "./jsonld";
 
-const TITLE = "Htronic Portões Eletrônicos | Instalação e manutenção em Curitiba";
+const TITLE = "Conserto de Portão Eletrônico em Curitiba 24h | Htronic";
 const DESCRIPTION =
-  "Instalação, manutenção e automação de portões eletrônicos residenciais, comerciais e condomínios em Curitiba e região. Motores, placas, centrais e controles. Peça seu orçamento pelo WhatsApp.";
+  "Conserto, manutenção e instalação de portão eletrônico em Curitiba e região, 24 horas. PPA, Garen, Peccinin, Rossi e outras marcas. Garantia de até 1 ano.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

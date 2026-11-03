@@ -7,7 +7,7 @@ export const localBusinessJsonLd = {
   "@id": `${SITE_URL}/#negocio`,
   name: "Htronic Portões Eletrônicos",
   description:
-    "Instalação, manutenção e automação de portões eletrônicos residenciais, comerciais e condomínios em Curitiba e região.",
+    "Conserto, manutenção, instalação e automação de portões eletrônicos residenciais, comerciais e condomínios em Curitiba e região. Atendimento 24 horas, todas as marcas e modelos.",
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og.jpg`,
   logo: `${SITE_URL}/img/logo.jpg`,
@@ -20,6 +20,13 @@ export const localBusinessJsonLd = {
     addressCountry: "BR",
   },
   areaServed: ["Curitiba", "São José dos Pinhais", "Pinhais", "Colombo", "Araucária"].map((name) => ({ "@type": "City", name })),
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59",
+  },
+  knowsAbout: ["PPA", "Garen", "Peccinin", "GL", "Unisystem", "Rossi"].map((b) => `Portões eletrônicos ${b}`),
   hasMap: "https://maps.app.goo.gl/ZKuc6KN7fKLBhFJE9",
   sameAs: ["https://maps.app.goo.gl/ZKuc6KN7fKLBhFJE9"],
   makesOffer: [

@@ -12,12 +12,13 @@ const nav = [
   ["Serviços", "#servicos"],
   ["Sobre", "#sobre"],
   ["Avaliações", "#avaliacoes"],
+  ["Dúvidas", "#duvidas"],
   ["Contato", "#contato"],
 ] as const;
 
 const badges = [
-  [Bolt, "Atendimento", "rápido"],
-  [Shield, "Serviço com", "garantia"],
+  [Bolt, "Atendimento", "24 horas"],
+  [Shield, "Garantia de", "até 1 ano"],
   [Pin, "Curitiba e", "região"],
 ] as const;
 
@@ -60,6 +61,17 @@ const reviews = [
   },
 ] as const;
 
+const brands = ["PPA", "Garen", "Peccinin", "GL", "Unisystem", "Rossi"] as const;
+
+const faq = [
+  ["Vocês atendem 24 horas?", `Sim. A Htronic atende 24 horas em Curitiba e região. Chame pelo WhatsApp ou ligue para ${PHONE_TEXT}.`],
+  ["Quais marcas e modelos de portão eletrônico vocês atendem?", "Todas as marcas e modelos, entre elas PPA, Garen, Peccinin, GL, Unisystem e Rossi."],
+  ["Qual é a garantia do serviço?", "1 ano de garantia em peças e equipamentos novos e 90 dias em peças e equipamentos usados."],
+  ["Quais cidades vocês atendem?", "Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e região. Consulte a disponibilidade para o seu bairro."],
+  ["Meu portão não abre ou não fecha. O que pode ser?", "As causas mais comuns são problema no controle, na placa eletrônica, no motor ou nos sensores. Descreva o problema pelo WhatsApp para a equipe da Htronic fazer o diagnóstico e combinar o atendimento."],
+  ["Vocês consertam placa eletrônica e central do portão?", "Sim. Fazemos o conserto e a substituição de placas e centrais eletrônicas, além de controles, sensores e receptores."],
+] as const;
+
 const cities = ["Curitiba", "São José dos Pinhais", "Pinhais", "Colombo", "Araucária", "e região"];
 
 const Stars = ({ n = 5 }: { n?: number }) => (
@@ -89,7 +101,7 @@ export default function Page() {
           <div className="ht-hero-in">
             <div className="ht-hero-copy">
               <h1><span className="ht-eyebrow">Portões eletrônicos em Curitiba e região</span>Seu portão parou?<br />A <em>Htronic resolve.</em></h1>
-              <p className="ht-lead">Instalação, manutenção e automação de portões eletrônicos residenciais, comerciais e condomínios.</p>
+              <p className="ht-lead">Instalação, manutenção e automação de portões eletrônicos residenciais, comerciais e condomínios. Todas as marcas e modelos, 24 horas.</p>
               <div className="ht-cta-row">
                 <a className="ht-btn ht-btn-yellow ht-btn-lg" href={WHATSAPP} target="_blank" rel="noreferrer">
                   <WhatsApp /> Pedir orçamento pelo WhatsApp <Arrow />
@@ -155,6 +167,26 @@ export default function Page() {
           </div>
         </section>
 
+        <section className="ht-brands" id="marcas">
+          <div className="ht-brands-in">
+            <div className="ht-brands-text">
+              <h2 className="ht-title ht-title-light">Todas as <em>marcas e modelos</em> de portão eletrônico</h2>
+              <p>Conserto, manutenção e instalação de motores, placas e centrais, com atendimento 24 horas em Curitiba e região. Atendemos, entre outras:</p>
+              <ul className="ht-brand-list">
+                {brands.map((b) => <li key={b}>{b}</li>)}
+                <li className="more">e outras marcas</li>
+              </ul>
+            </div>
+            <div className="ht-warranty">
+              <h3><Shield /> Garantia nos serviços</h3>
+              <ul>
+                <li><strong>1 ano</strong><span>em peças e equipamentos novos</span></li>
+                <li><strong>90 dias</strong><span>em peças e equipamentos usados</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section className="ht-reviews" id="avaliacoes">
           <div className="ht-reviews-in">
             <div className="ht-rating">
@@ -175,6 +207,18 @@ export default function Page() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className="ht-faq" id="duvidas">
+          <div className="ht-faq-in">
+            <h2 className="ht-title">Perguntas <em>frequentes</em></h2>
+            {faq.map(([q, a]) => (
+              <details key={q}>
+                <summary>{q}</summary>
+                <p>{a}</p>
+              </details>
+            ))}
           </div>
         </section>
 
