@@ -2,6 +2,7 @@ import { Arrow, Bolt, Check, Chip, GateIcon, Gear, GoogleG, Phone, Pin, Remote, 
 
 const IMG = "/img";
 const PHONE_TEL = "tel:+5541999025303";
+const PHONE_TEXT = "(41) 99902-5303";
 const WHATSAPP = "https://wa.me/5541999025303?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20meu%20port%C3%A3o.";
 const MAPS = "https://maps.app.goo.gl/ZKuc6KN7fKLBhFJE9";
 const ADDRESS = "Rua Professor José Maurício Higgins, 2827 — Boqueirão, Curitiba/PR";
@@ -47,13 +48,13 @@ const segments = [
 const reviews = [
   {
     name: "Jorge Luis Orlandi",
-    meta: "Local Guide · 4 meses atrás",
+    meta: "Local Guide",
     text: "Excelente atendimento, excelente custo-benefício. O Sr. Laurence se mostrou muito prestativo e resolveu rapidamente o problema no motor do meu portão e também do teto móvel da cozinha. Super recomendo.",
     reply: "Obrigado. Queremos o melhor para nossos clientes.",
   },
   {
     name: "Paulo Germano",
-    meta: "154 avaliações em Curitiba · 2 meses atrás",
+    meta: "154 avaliações em Curitiba",
     text: "Fui muito bem atendido, serviço rápido e valor muito bom de peças e serviço. Atende rápido, entende do ramo. Indico sem medo.",
     reply: "Obrigado pela confiança. Nosso cliente em primeiro lugar.",
   },
@@ -72,7 +73,7 @@ export default function Page() {
     <div className="ht">
       <header className="ht-header">
         <div className="ht-header-in">
-          <a href="#inicio" className="ht-logo"><img src={`${IMG}/logo.jpg`} alt="Htronic Portões Eletrônicos" width={184} height={46} /></a>
+          <a href="#inicio" className="ht-logo"><img src={`${IMG}/logo.jpg`} alt="Htronic Portões Eletrônicos" width={552} height={138} /></a>
           <nav aria-label="Principal">
             {nav.map(([l, h], i) => <a key={h} href={h} className={i === 0 ? "is-active" : undefined}>{l}</a>)}
           </nav>
@@ -84,11 +85,10 @@ export default function Page() {
 
       <main>
         <section className="ht-hero" id="inicio">
-          <img className="ht-hero-img" src={`${IMG}/hero.jpg`} alt="Portão eletrônico de lâminas horizontais iluminado em fachada residencial" />
+          <img className="ht-hero-img" src={`${IMG}/hero.jpg`} width={626} height={682} fetchPriority="high" alt="Portão eletrônico de lâminas horizontais iluminado em fachada residencial" />
           <div className="ht-hero-in">
             <div className="ht-hero-copy">
-              <p className="ht-eyebrow">CURITIBA E REGIÃO</p>
-              <h1>Seu portão parou?<br />A <em>Htronic resolve.</em></h1>
+              <h1><span className="ht-eyebrow">Portões eletrônicos em Curitiba e região</span>Seu portão parou?<br />A <em>Htronic resolve.</em></h1>
               <p className="ht-lead">Instalação, manutenção e automação de portões eletrônicos residenciais, comerciais e condomínios.</p>
               <div className="ht-cta-row">
                 <a className="ht-btn ht-btn-yellow ht-btn-lg" href={WHATSAPP} target="_blank" rel="noreferrer">
@@ -105,12 +105,13 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="ht-services" id="servicos" aria-label="Serviços">
+        <section className="ht-services" id="servicos">
+          <h2 className="ht-sr">Serviços de portões eletrônicos em Curitiba</h2>
           <ul className="ht-services-in">
             {services.map(([Icon, a, b, d]) => (
               <li key={a + b}>
                 <Icon className="ht-svc-ico" />
-                <h2>{a}<br />{b}</h2>
+                <h3>{a}<br />{b}</h3>
                 <p>{d}</p>
                 <i aria-hidden="true" />
               </li>
@@ -127,11 +128,11 @@ export default function Page() {
               </ul>
             </div>
             <figure className="ht-photo">
-              <img src={`${IMG}/placa.jpg`} alt="Placa eletrônica de portão aberta, com fios e componentes" loading="lazy" />
+              <img src={`${IMG}/placa.jpg`} width={560} height={456} alt="Placa eletrônica de portão aberta, com fios e componentes" loading="lazy" />
               <figcaption><b>Placa e central eletrônica</b>Diagnóstico e reparo de placas.</figcaption>
             </figure>
             <figure className="ht-photo">
-              <img src={`${IMG}/motor.jpg`} alt="Motor de portão eletrônico sobre a base de fixação" loading="lazy" />
+              <img src={`${IMG}/motor.jpg`} width={622} height={456} alt="Motor de portão eletrônico sobre a base de fixação" loading="lazy" />
               <figcaption><b>Motores de portões</b>Manutenção e substituição.</figcaption>
             </figure>
           </div>
@@ -146,7 +147,7 @@ export default function Page() {
             <ul className="ht-seg-grid">
               {segments.map(([img, t, d, alt, Icon]) => (
                 <li key={t}>
-                  <img src={`${IMG}/${img}`} alt={alt} loading="lazy" />
+                  <img src={`${IMG}/${img}`} width={410} height={220} alt={alt} loading="lazy" />
                   <div><span className="ht-seg-ico"><Icon /></span><p><b>{t}</b>{d}</p></div>
                 </li>
               ))}
@@ -185,6 +186,7 @@ export default function Page() {
                 <h2 className="ht-title ht-title-light">Atendimento em Curitiba e região</h2>
                 <p>Atendemos bairros de Curitiba e cidades próximas. Entre em contato e verifique a disponibilidade para a sua região.</p>
                 <p className="ht-address">{ADDRESS}</p>
+                <p className="ht-address">Telefone e WhatsApp: <a href={PHONE_TEL}>{PHONE_TEXT}</a></p>
               </div>
             </div>
             <svg className="ht-map" viewBox="0 0 300 220" role="img" aria-label="Mapa estilizado da área de atendimento em Curitiba e região">
@@ -210,7 +212,7 @@ export default function Page() {
       </main>
 
       <footer className="ht-footer">
-        <p>© Htronic Portões Eletrônicos · {ADDRESS}</p>
+        <p>© Htronic Portões Eletrônicos · {ADDRESS} · <a href={PHONE_TEL}>{PHONE_TEXT}</a></p>
       </footer>
     </div>
   );

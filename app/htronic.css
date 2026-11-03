@@ -44,7 +44,9 @@ html{scroll-behavior:smooth}
 .ht-hero-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:104px 24px 74px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;min-height:413px}
 .ht-hero-copy{max-width:560px}
 .ht-eyebrow{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--y)}
-.ht-hero h1{font-size:clamp(38px,5.2vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-top:8px}
+.ht-hero h1 .ht-eyebrow{display:block;text-transform:uppercase;line-height:1.4;margin-bottom:8px}
+.ht-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ht-hero h1{font-size:clamp(38px,5.2vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-top:0}
 .ht-hero h1 em{font-style:normal;color:var(--y)}
 .ht-lead{font-size:clamp(16px,2vw,19px);font-weight:400;line-height:1.35;margin-top:20px;max-width:360px;color:#f1f1f1}
 .ht-cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
@@ -57,7 +59,7 @@ html{scroll-behavior:smooth}
 .ht-services-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .ht-services-in li{background:#fff;border-radius:12px;padding:20px 12px 16px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;flex-direction:column;align-items:center}
 .ht-svc-ico{font-size:40px;color:var(--y);margin-bottom:8px}
-.ht-services-in h2{font-size:16px;font-weight:800;line-height:1.2;color:#111}
+.ht-services-in h3{font-size:16px;font-weight:800;line-height:1.2;color:#111}
 .ht-services-in p{font-size:11.5px;color:#666;line-height:1.35;margin-top:8px;max-width:170px}
 .ht-services-in i{display:block;width:30px;height:3px;border-radius:2px;background:var(--y);margin-top:auto;position:relative;top:10px}
 .ht-services-in li p{margin-bottom:18px}
@@ -113,6 +115,7 @@ html{scroll-behavior:smooth}
 .ht-area-text{display:flex;gap:14px;align-items:flex-start}
 .ht-area-pin{font-size:42px;color:var(--y)}
 .ht-area-text p{font-size:13.5px;color:#cfd3d6;margin-top:14px;line-height:1.55}
+.ht-area-text .ht-address a{color:var(--y);text-decoration:underline}
 .ht-area-text .ht-address{font-size:12px;color:var(--mut);margin-top:10px}
 .ht svg.ht-map{width:100%;height:auto;max-height:200px;background:#101214;border-radius:10px}
 .ht-cities{display:grid;gap:8px;font-size:12.5px}
@@ -121,6 +124,7 @@ html{scroll-behavior:smooth}
 .ht-quote{background:var(--y);color:#111;border-radius:14px;padding:18px 20px;display:grid;gap:10px}
 .ht-quote h2{font-size:18px;font-weight:800;line-height:1.2}
 
+.ht-footer a{color:inherit;text-decoration:underline}
 .ht-footer{background:#0c0d0e;color:var(--mut);text-align:center;font-size:11.5px;padding:14px 24px}
 
 /* tablet */
