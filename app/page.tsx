@@ -1,20 +1,8 @@
+import Link from "next/link";
 import { Arrow, Bolt, Check, Chip, GateIcon, Gear, GoogleG, Phone, Pin, Remote, Shield, Star, WhatsApp, Wrench } from "./icons";
-
-const IMG = "/img";
-const PHONE_TEL = "tel:+5541999025303";
-const PHONE_TEXT = "(41) 99902-5303";
-const WHATSAPP = "https://wa.me/5541999025303?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20meu%20port%C3%A3o.";
-const MAPS = "https://maps.app.goo.gl/ZKuc6KN7fKLBhFJE9";
-const ADDRESS = "Rua Professor José Maurício Higgins, 2827 — Boqueirão, Curitiba/PR";
-
-const nav = [
-  ["Início", "#inicio"],
-  ["Serviços", "#servicos"],
-  ["Sobre", "#sobre"],
-  ["Avaliações", "#avaliacoes"],
-  ["Dúvidas", "#duvidas"],
-  ["Contato", "#contato"],
-] as const;
+import { BrandsWarranty, FaqList, Footer, Header } from "./components";
+import { IMG, MAPS, ADDRESS, PHONE_TEL, PHONE_TEXT, WHATSAPP, cityList, href } from "./data";
+import { services as servicePages } from "./content";
 
 const badges = [
   [Bolt, "Atendimento", "24 horas"],
@@ -61,8 +49,6 @@ const reviews = [
   },
 ] as const;
 
-const brands = ["PPA", "Garen", "Peccinin", "GL", "Unisystem", "Rossi"] as const;
-
 const faq = [
   ["Vocês atendem 24 horas?", `Sim. A Htronic atende 24 horas em Curitiba e região. Chame pelo WhatsApp ou ligue para ${PHONE_TEXT}.`],
   ["Quais marcas e modelos de portão eletrônico vocês atendem?", "Todas as marcas e modelos, entre elas PPA, Garen, Peccinin, GL, Unisystem e Rossi."],
@@ -71,8 +57,6 @@ const faq = [
   ["Meu portão não abre ou não fecha. O que pode ser?", "As causas mais comuns são problema no controle, na placa eletrônica, no motor ou nos sensores. Descreva o problema pelo WhatsApp para a equipe da Htronic fazer o diagnóstico e combinar o atendimento."],
   ["Vocês consertam placa eletrônica e central do portão?", "Sim. Fazemos o conserto e a substituição de placas e centrais eletrônicas, além de controles, sensores e receptores."],
 ] as const;
-
-const cities = ["Curitiba", "São José dos Pinhais", "Pinhais", "Colombo", "Araucária", "e região"];
 
 const Stars = ({ n = 5 }: { n?: number }) => (
   <span className="ht-stars" role="img" aria-label={`${n} estrelas`}>
@@ -83,17 +67,7 @@ const Stars = ({ n = 5 }: { n?: number }) => (
 export default function Page() {
   return (
     <div className="ht">
-      <header className="ht-header">
-        <div className="ht-header-in">
-          <a href="#inicio" className="ht-logo"><img src={`${IMG}/logo.jpg`} alt="Htronic Portões Eletrônicos" width={552} height={138} /></a>
-          <nav aria-label="Principal">
-            {nav.map(([l, h], i) => <a key={h} href={h} className={i === 0 ? "is-active" : undefined}>{l}</a>)}
-          </nav>
-          <a className="ht-btn ht-btn-yellow ht-btn-sm" href={WHATSAPP} target="_blank" rel="noreferrer">
-            <WhatsApp /> <span>Pedir orçamento</span>
-          </a>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="ht-hero" id="inicio">
@@ -120,10 +94,10 @@ export default function Page() {
         <section className="ht-services" id="servicos">
           <h2 className="ht-sr">Serviços de portões eletrônicos em Curitiba</h2>
           <ul className="ht-services-in">
-            {services.map(([Icon, a, b, d]) => (
+            {services.map(([Icon, a, b, d], idx) => (
               <li key={a + b}>
                 <Icon className="ht-svc-ico" />
-                <h3>{a}<br />{b}</h3>
+                <h3><Link href={href(servicePages[idx].slug)}>{a}<br />{b}</Link></h3>
                 <p>{d}</p>
                 <i aria-hidden="true" />
               </li>
@@ -167,25 +141,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="ht-brands" id="marcas">
-          <div className="ht-brands-in">
-            <div className="ht-brands-text">
-              <h2 className="ht-title ht-title-light">Todas as <em>marcas e modelos</em> de portão eletrônico</h2>
-              <p>Conserto, manutenção e instalação de motores, placas e centrais, com atendimento 24 horas em Curitiba e região. Atendemos, entre outras:</p>
-              <ul className="ht-brand-list">
-                {brands.map((b) => <li key={b}>{b}</li>)}
-                <li className="more">e outras marcas</li>
-              </ul>
-            </div>
-            <div className="ht-warranty">
-              <h3><Shield /> Garantia nos serviços</h3>
-              <ul>
-                <li><strong>1 ano</strong><span>em peças e equipamentos novos</span></li>
-                <li><strong>90 dias</strong><span>em peças e equipamentos usados</span></li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        <BrandsWarranty />
 
         <section className="ht-reviews" id="avaliacoes">
           <div className="ht-reviews-in">
@@ -210,17 +166,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="ht-faq" id="duvidas">
-          <div className="ht-faq-in">
-            <h2 className="ht-title">Perguntas <em>frequentes</em></h2>
-            {faq.map(([q, a]) => (
-              <details key={q}>
-                <summary>{q}</summary>
-                <p>{a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
+        <FaqList items={faq} id="duvidas" />
 
         <section className="ht-area" id="contato">
           <div className="ht-area-in">
@@ -244,7 +190,8 @@ export default function Page() {
               <text x="150" y="170" textAnchor="middle" fill="#111" fontSize="17" fontWeight="700">e região</text>
             </svg>
             <ul className="ht-cities">
-              {cities.map((c) => <li key={c}><Check />{c}</li>)}
+              {cityList.map((c) => <li key={c.name}><Check /><Link href={href(c.slug)}>{c.name}</Link></li>)}
+              <li><Check />e região</li>
             </ul>
             <div className="ht-quote">
               <h2>Solicite seu orçamento agora</h2>
@@ -255,9 +202,7 @@ export default function Page() {
         </section>
       </main>
 
-      <footer className="ht-footer">
-        <p>© Htronic Portões Eletrônicos · {ADDRESS} · <a href={PHONE_TEL}>{PHONE_TEXT}</a></p>
-      </footer>
+      <Footer />
     </div>
   );
 }
