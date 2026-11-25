@@ -12,7 +12,7 @@ npm run build    # gera ./out
 
 ## Modo "Em breve"
 
-A página inicial mostra apenas o logo e "Em breve" enquanto `COMING_SOON = true` em `app/site.ts`. Nesse modo a home recebe `noindex` e sai do `sitemap.xml`. A home completa está preservada em `app/home.tsx` (e na tag `home-original`).
+A página inicial mostra apenas o logo e "Em breve" enquanto `COMING_SOON = true` em `app/site.ts`. Nesse modo a home recebe `noindex` e sai do `sitemap.xml`. A home completa está preservada em `app/home.tsx` (e no commit `572c2e9`, o último com a home completa antes do modo "Em breve").
 
 Para o site voltar ao normal: troque `COMING_SOON` para `false`, faça commit e push. A Netlify publica sozinha.
 
