@@ -10,6 +10,12 @@ npm run dev      # http://localhost:3000
 npm run build    # gera ./out
 ```
 
+## Modo "Em breve"
+
+A página inicial mostra apenas o logo e "Em breve" enquanto `COMING_SOON = true` em `app/site.ts`. Nesse modo a home recebe `noindex` e sai do `sitemap.xml`. A home completa está preservada em `app/home.tsx` (e na tag `home-original`).
+
+Para o site voltar ao normal: troque `COMING_SOON` para `false`, faça commit e push. A Netlify publica sozinha.
+
 ## Publicação (Cloudflare Pages)
 
 Conecte este repositório em Workers & Pages → Create → Pages → Connect to Git:
